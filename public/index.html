@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Firebase Hosting</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/8.6.7/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/8.6.7/firebase-auth.js"></script>
+  <script defer src="/__/firebase/8.6.7/firebase-database.js"></script>
+  <script defer src="/__/firebase/8.6.7/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/8.6.7/firebase-functions.js"></script>
+  <script defer src="/__/firebase/8.6.7/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/8.6.7/firebase-storage.js"></script>
+  <script defer src="/__/firebase/8.6.7/firebase-analytics.js"></script>
+  <script defer src="/__/firebase/8.6.7/firebase-remote-config.js"></script>
+  <script defer src="/__/firebase/8.6.7/firebase-performance.js"></script>
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  <style media="screen">
+    body {
+      background: #ECEFF1;
+      color: rgba(0, 0, 0, 0.87);
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #message {
+      background: white;
+      max-width: 360px;
+      margin: 100px auto 16px;
+      padding: 32px 24px;
+      border-radius: 3px;
+    }
+
+    #message h2 {
+      color: #ffa100;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    #message h1 {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.6);
+      margin: 0 0 16px;
+    }
+
+    #message p {
+      line-height: 140%;
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+
+    #message a {
+      display: block;
+      text-align: center;
+      background: #039be5;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    #message,
+    #message a {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    #load {
+      color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      body,
+      #message {
+        margin-top: 0;
+        background: white;
+        box-shadow: none;
+      }
+
+      body {
+        border-top: 16px solid #ffa100;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id='name' name='name'>
+  <input type="text" name="age" id='age'>
+  <button type="submit" onclick="getValues()" id='send'>submit</button>
+
+  <div id="d"></div>
+
+  <script>
+    let b = document.getElementById('send');
+    let d = document.getElementById('d');
+
+    function getValues() {
+      const requestOptions = {
+        method: 'GET'
+      };
+      let path = "https://firebasestorage.googleapis.com/v0/b/pdf-to-text-9b28b.appspot.com/o/sample(3).pdf"
+      fetch(`http://localhost:3000?pdfURL=${path}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data) 
+        });
+  res.end('Hello World');
+
+    }
+  </script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- <script src="/__/firebase/8.6.7/firebase-app.js"></script> -->
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <!-- Initialize Firebase -->
+  <!-- <script src="/__/firebase/init.js"></script> -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+  
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCBju2hTswmh2h8DdNnGMycUXckE4-vkaQ",
+      authDomain: "pdf2text-zile.firebaseapp.com",
+      projectId: "pdf2text-zile",
+      storageBucket: "pdf2text-zile.appspot.com",
+      messagingSenderId: "626124511562",
+      appId: "1:626124511562:web:77e604f4b41601129089b3"
+    };
+    // Initialize Firebase
+   
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</body>
+
+</html>

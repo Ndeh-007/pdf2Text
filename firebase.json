@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "site": "pdf2text-node",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
